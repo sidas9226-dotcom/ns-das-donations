@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NS DAS | Fondation & Dons Directs de Nasser Sari</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts : Playfair Display (Serif) & Plus Jakarta Sans (Sans-Serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#F8F7F2',
+                        forest: '#0B3B24',
+                        emeraldVibrant: '#1F9D55',
+                        emeraldHover: '#177d44',
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'Georgia', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Masquer la barre de défilement des carrousels tout en gardant le swipe fluide */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-cream text-forest font-sans antialiased selection:bg-emeraldVibrant selection:text-white">
+
+    <!-- CONFIGURATION WHATSAPP BUSINESS -->
+    <script>
+        const WHATSAPP_LINK = "https://wa.me/message/O5SJJEPXTLQGJ1";
+    </script>
+
+    <!-- A. BARRE DE NAVIGATION (HEADER STICKY) -->
+    <header class="sticky top-0 z-50 bg-cream/90 backdrop-blur-md border-b border-forest/10 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-forest text-cream flex items-center justify-center font-serif font-bold text-lg shadow-md group-hover:bg-emeraldVibrant transition-colors">
+                    N
+                </div>
+                <div>
+                    <span class="block font-serif font-bold text-lg tracking-wide text-forest">Nasser Sari</span>
+                    <span class="block text-xs uppercase tracking-widest text-emeraldVibrant font-semibold">NS DAS Fondation</span>
+                </div>
+            </a>
+
+            <div class="flex items-center gap-4">
+                <a href="https://wa.me/message/O5SJJEPXTLQGJ1" target="_blank" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-emeraldVibrant text-white font-semibold text-sm shadow-lg shadow-emeraldVibrant/20 hover:bg-emeraldHover transition-all transform hover:-translate-y-0.5">
+                    Faire ma demande sur WhatsApp
+                </a>
+                                <button onclick="toggleMobileMenu()" aria-label="Menu" class="w-11 h-11 rounded-xl border border-forest/10 bg-white flex flex-col items-center justify-center gap-1.5 shadow-sm hover:border-emeraldVibrant transition-colors focus:outline-none">
+                    <span class="w-5 h-0.5 bg-forest rounded-full"></span>
+                    <span class="w-5 h-0.5 bg-forest rounded-full"></span>
+                    <span class="w-3 h-0.5 bg-forest rounded-full self-start ml-3"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MENU BURGER MODAL / OVERLAY -->
+    <div id="mobileMenu" class="fixed inset-0 z-50 bg-forest/95 backdrop-blur-lg flex flex-col justify-center px-8 transition-all duration-300 transform translate-x-full">
+        <button onclick="toggleMobileMenu()" class="absolute top-6 right-6 text-white text-3xl font-bold focus:outline-none">&times;</button>
+        <div class="space-y-6 text-center max-w-sm mx-auto w-full">
+            <h3 class="font-serif text-2xl font-bold text-white mb-4">NS DAS - Nasser Sari</h3>
+            <a href="#actions" onclick="toggleMobileMenu()" class="block text-lg text-white/90 hover:text-emeraldVibrant font-medium py-2">Mes Actions & Preuves</a>
+            <a href="#galerie-preuves" onclick="toggleMobileMenu()" class="block text-lg text-white/90 hover:text-emeraldVibrant font-medium py-2">Galerie Complète (21 Photos)</a>
+            <a href="#fonctionnement" onclick="toggleMobileMenu()" class="block text-lg text-white/90 hover:text-emeraldVibrant font-medium py-2">Comment ça marche</a>
+            <div class="pt-6 border-t border-white/10">
+                <a href="https://wa.me/message/O5SJJEPXTLQGJ1" target="_blank" class="block w-full py-4 rounded-full bg-emeraldVibrant text-white font-bold text-base shadow-xl text-center hover:bg-emeraldHover transition-all">
+                    Contactez-nous par WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- B. SECTION HÉRO (PREMIÈRE VUE) AVEC CARROUSEL AUTOMATIQUE (8 PHOTOS) -->
+    <section class="relative pt-12 pb-20 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emeraldVibrant/10 text-emeraldVibrant text-xs font-bold uppercase tracking-wider">
+                        <span class="w-2 h-2 rounded-full bg-emeraldVibrant animate-pulse"></span>
+                        Philanthropie directe & transparente par Nasser Sari
+                    </div>
+                    
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-forest leading-[1.15]">
+                        Des dons directs et <span class="italic text-emeraldVibrant">transparents</span> pour ceux qui en ont le plus besoin.
+                    </h1>
+                    
+                    <p class="text-lg text-forest/80 max-w-2xl leading-relaxed">
+                        En tant que philanthrope à la tête de NS DAS, je partage ma réussite en offrant directement des véhicules, des aides financières et un soutien médical sans aucun intermédiaire ni frais cachés.
+                    </p>
+                    
+                    <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                        <a href="https://wa.me/message/O5SJJEPXTLQGJ1" target="_blank" class="inline-flex items-center justify-center px-8 py-4 rounded-full bg-emeraldVibrant text-white font-bold text-base shadow-xl shadow-emeraldVibrant/25 hover:bg-emeraldHover transition-all transform hover:-translate-y-1 text-center">
+                            Me contacter directement sur WhatsApp
+                        </a>
+                    </div>
+                    
+                    <div class="flex items-center gap-3 text-xs sm:text-sm text-forest/70 bg-white/60 border border-forest/10 p-3.5 rounded-2xl max-w-xl">
+                        <span class="text-emeraldVibrant text-lg font-bold">ℹ</span>
+                        <span><strong>100 % gratuit.</strong> Aucun frais de dossier ni commission ne vous sera jamais demandé par NS DAS.</span>
+                    </div>
+                </div>
+
+                <!-- Carrousel Principal Héro (Intègre 8 photos fortes avec défilement automatique toutes les 2s) -->
+                <div class="lg:col-span-5 relative">
+                    <div id="heroCarousel" class="flex gap-4 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory py-2" onmouseenter="pauseAutoScroll('hero')" onmouseleave="resumeAutoScroll('hero')" ontouchstart="pauseAutoScroll('hero')" ontouchend="resumeAutoScroll('hero')">
+                        
+                        <!-- Photo 1 -->
+                        <div class="w-72 sm:w-80 flex-shrink-0 snap-center relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white h-96">
+                            <img src="856f4878e16ce710ad3307a910a6872d.jpg" class="w-full h-full object-cover" alt="Nasser Sari Quotidien">
+                            <div class="absolute inset-0 bg-gradient-to-t from-forest/80 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 right-4 text-white text-center">
+                                <span class="bg-emeraldVibrant px-3 py-1 rounded-full text-xs font-bold uppercase">Quotidien & Mode de vie</span>
+                            </div>
+                        </div>
+                        <!-- Photo 2 -->
+                        <div class="w-72 sm:w-80 flex-shrink-0 snap-center relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white h-96">
+                            <img src="a73f03cf105c6c866eb595ccfa2b3f36.jpg" class="w-full h-full object-cover" alt="Don de voiture NS DAS">
+                            <div class="absolute inset-0 bg-gradient-to-t from-forest/80 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 right-4 text-white text-center">
+                                <span class="bg-emeraldVibrant px-3 py-1 rounded-full text-xs font-bold uppercase">Remise de véhicule neuf</span>
+                            </div>
+                        </div>
+                        <!-- Photo 3 -->
+                        <div class="w-72 sm:w-80 flex-shrink-0 snap-center relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white h-96">
+                            <img src="57af0e37c7201d0c815bcb39edbcfc13.jpg" class="w-full h-full object-cover" alt="Nasser Sari en réunion">
+                            <div class="absolute inset-0 bg-gradient-to-t from-forest/80 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 right-4 text-white text-center">
+                                <span class="bg-emeraldVibrant px-3 py-1 rounded-full text-xs font-bold uppercase">Planification & Stratégie</span>
+                            </div>
+                        </div>
+                        <!-- Photo 4 -->
+                        <div class="w-72 sm:w-80 flex-shrink-0 snap-center relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white h-96">
+                            <img src="f0cc119a8d843f816bb0f84e2c9f5929.jpg" class="w-full h-full object-cover" alt="Remise de clés">
+                            <div class="absolute inset-0 bg-gradient-to-t from-forest/80 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 right-4 text-white text-center">
+                                <span class="bg-emeraldVibrant px-3 py-1 rounded-full text-xs font-bold uppercase">Sourire & Clés en main</span>
+                            </div>
+                        </div>
+                        <!-- Photo 5 -->
+                        <div class="w-72 sm:w-80 flex-shrink-0 snap-center relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white h-96">
+                            <img src="b9e83e3c8dbaae0a973e2919e40908ca.jpg" class="w-full h-full object-cover" alt="Bénéficiaires heureux">
+                            <div class="absolute inset-0 bg-gradient-to-t from-forest/80 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 right-4 text-white text-center">
+                                <span class="bg-emeraldVibrant px-3 py-1 rounded-full text-xs font-bold uppercase">Famille bénéficiaire</span>
+                            </div>
+                        </div>
+                        <!-- Photo 6 -->
+                        <div class="w-72 sm:w-80 flex-shrink-0 snap-center relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white h-96">
+                            <img src="f092e3663b29c5d1ca525be7c21cd0e6.jpg" class="w-full h-full object-cover" alt="Action humanitaire">
+                            <div class="absolute inset-0 bg-gradient-to-t from-forest/80 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 right-4 text-white text-center">
+                                <span class="bg-emeraldVibrant px-3 py-1 rounded-full text-xs font-bold uppercase">Distribution de vivres</span>
+                            </div>
+                        </div>
+                        <!-- Photo 7 -->
+                        <div class="w-72 sm:w-80 flex-shrink-0 snap-center relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white h-96">
+                            <img src="607e6d6b6c61a241f81b97aa33e23872.jpg" class="w-full h-full object-cover" alt="Réunion Fondation">
+                            <div class="absolute inset-0 bg-gradient-to-t from-forest/80 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 right-4 text-white text-center">
+                                <span class="bg-emeraldVibrant px-3 py-1 rounded-full text-xs font-bold uppercase">Équipe NS DAS</span>
+                            </div>
+                        </div>
+                        <!-- Photo 8 -->
+                        <div class="w-72 sm:w-80 flex-shrink-0 snap-center relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white h-96">
+                            <img src="f91dba7bad9d518051777b86d58d0834.jpg" class="w-full h-full object-cover" alt="Heureux propriétaires">
+                            <div class="absolute inset-0 bg-gradient-to-t from-forest/80 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 right-4 text-white text-center">
+                                <span class="bg-emeraldVibrant px-3 py-1 rounded-full text-xs font-bold uppercase">Nouveau véhicule offert</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Boutons de contrôle manuel < > pour ordinateur -->
+                    <div class="flex justify-center gap-4 mt-4">
+                        <button onclick="scrollCarousel('hero', 'left')" class="w-10 h-10 rounded-full bg-forest text-white flex items-center justify-center shadow-md hover:bg-emeraldVibrant transition-colors">‹</button>
+                        <button onclick="scrollCarousel('hero', 'right')" class="w-10 h-10 rounded-full bg-forest text-white flex items-center justify-center shadow-md hover:bg-emeraldVibrant transition-colors">›</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- C. BANDEAU DE CRÉDIBILITÉ (FOND VERT FORÊT #0B3B24) -->
+    <section class="bg-forest text-white py-12 border-y border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                
+                <div class="space-y-2">
+                    <div class="w-12 h-12 mx-auto rounded-2xl bg-white/10 flex items-center justify-center text-emeraldVibrant text-xl font-bold">✓</div>
+                    <h3 class="font-bold text-base sm:text-lg">Dons 100 % Vérifiés</h3>
+                    <p class="text-xs text-white/70">Preuves à l'appui et transparence totale</p>
+                </div>
+
+                <div class="space-y-2">
+                    <div class="w-12 h-12 mx-auto rounded-2xl bg-white/10 flex items-center justify-center text-emeraldVibrant text-xl font-bold">🤝</div>
+                    <h3 class="font-bold text-base sm:text-lg">Soutien Direct</h3>
+                    <p class="text-xs text-white/70">Sans aucun intermédiaire</p>
+                </div>
+
+                <div class="space-y-2">
+                    <div class="w-12 h-12 mx-auto rounded-2xl bg-white/10 flex items-center justify-center text-emeraldVibrant text-xl font-bold">0€</div>
+                    <h3 class="font-bold text-base sm:text-lg">0 % de Frais</h3>
+                    <p class="text-xs text-white/70">Totalement gratuit pour les bénéficiaires</p>
+                </div>
+
+                <div class="space-y-2">
+                    <div class="w-12 h-12 mx-auto rounded-2xl bg-white/10 flex items-center justify-center text-emeraldVibrant text-xl font-bold">💬</div>
+                    <h3 class="font-bold text-base sm:text-lg">Accompagnement Humain</h3>
+                    <p class="text-xs text-white/70">Contact direct et personnalisé</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- D. SECTION "MES ACTIONS & PREUVES EN DIRECT" -->
+    <section class="py-20 bg-cream" id="actions">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-12">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emeraldVibrant/10 text-emeraldVibrant text-xs font-bold uppercase tracking-wider">
+                    <span class="w-2 h-2 rounded-full bg-emeraldVibrant animate-pulse"></span>
+                    ACTIONS EN COURS
+                </div>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-forest">
+                    Mes engagements, mes dons et mes <span class="italic text-emeraldVibrant">preuves sur le terrain.</span>
+                </h2>
+            </div>
+
+            <!-- Filtres interactifs -->
+            <div class="flex flex-wrap justify-center gap-2 mb-12">
+                <button onclick="filtrerActions('tous', this)" class="filter-btn px-5 py-2.5 rounded-full text-sm font-bold bg-emeraldVibrant text-white shadow-md transition-all">Tout</button>
+                <button onclick="filtrerActions('voitures', this)" class="filter-btn px-5 py-2.5 rounded-full text-sm font-bold bg-white text-forest border border-forest/10 hover:border-emeraldVibrant transition-all">Dons de Voitures</button>
+                <button onclick="filtrerActions('finances', this)" class="filter-btn px-5 py-2.5 rounded-full text-sm font-bold bg-white text-forest border border-forest/10 hover:border-emeraldVibrant transition-all">Aides Financières</button>
+                <button onclick="filtrerActions('sante', this)" class="filter-btn px-5 py-2.5 rounded-full text-sm font-bold bg-white text-forest border border-forest/10 hover:border-emeraldVibrant transition-all">Santé & Maladies</button>
+                <button onclick="filtrerActions('quotidien', this)" class="filter-btn px-5 py-2.5 rounded-full text-sm font-bold bg-white text-forest border border-forest/10 hover:border-emeraldVibrant transition-all">Mon Quotidien</button>
+            </div>
+
+            <!-- Grille de Cartes (Preuves avec photos dédiées) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Carte 1 : Voitures -->
+                <div class="action-card bg-white rounded-2xl overflow-hidden shadow-xl shadow-forest/5 border border-forest/5 flex flex-col justify-between" data-category="voitures">
+                    <div>
+                        <div class="relative h-56 bg-forest/5 overflow-hidden">
+                            <img src="7b7702a6b0be02f31f600b85031843cd.jpg" class="w-full h-full object-cover" alt="Remise de véhicules neufs">
+                            <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-emeraldVibrant uppercase shadow-sm">Dons de Voitures</span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <h3 class="font-serif text-xl font-bold text-forest">Remise de véhicules neufs à des familles et entrepreneurs</h3>
+                            <p class="text-xs text-forest/60">Par Nasser Sari (NS DAS) • Preuve vérifiée sur le terrain</p>
+                            
+                            <div class="space-y-1.5 pt-2">
+                                <div class="flex justify-between text-xs font-bold">
+                                    <span>100 % distribué</span>
+                                    <span class="text-emeraldVibrant">50+ véhicules offerts</span>
+                                </div>
+                                <div class="w-full bg-cream h-2 rounded-full overflow-hidden">
+                                    <div class="bg-emeraldVibrant h-full rounded-full" style="width: 100%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2 flex items-center justify-between border-t border-forest/5 text-sm">
+                        <div>
+                            <span class="text-xs text-forest/60 block">Impact majeur</span>
+                            <strong class="text-forest font-bold">Mobilité retrouvée</strong>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-xs text-forest/60 block">Bénéficiaires</span>
+                            <strong class="text-emeraldVibrant font-bold">50+ familles</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carte 2 : Finances -->
+                <div class="action-card bg-white rounded-2xl overflow-hidden shadow-xl shadow-forest/5 border border-forest/5 flex flex-col justify-between" data-category="finances">
+                    <div>
+                        <div class="relative h-56 bg-forest/5 overflow-hidden">
+                            <img src="91b465b9f032787cbbea7da04b79042e.jpg" class="w-full h-full object-cover" alt="Soutien financier direct">
+                            <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-emeraldVibrant uppercase shadow-sm">Aide Financière</span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <h3 class="font-serif text-xl font-bold text-forest">Soutien financier d'urgence pour relance de projets</h3>
+                            <p class="text-xs text-forest/60">Par Nasser Sari (NS DAS) • Programme régulier</p>
+                            
+                            <div class="space-y-1.5 pt-2">
+                                <div class="flex justify-between text-xs font-bold">
+                                    <span>Objectif atteint</span>
+                                    <span class="text-emeraldVibrant">200+ familles aidées</span>
+                                </div>
+                                <div class="w-full bg-cream h-2 rounded-full overflow-hidden">
+                                    <div class="bg-emeraldVibrant h-full rounded-full" style="width: 100%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2 flex items-center justify-between border-t border-forest/5 text-sm">
+                        <div>
+                            <span class="text-xs text-forest/60 block">Fonds directs</span>
+                            <strong class="text-forest font-bold">Transparence totale</strong>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-xs text-forest/60 block">Bénéficiaires</span>
+                            <strong class="text-emeraldVibrant font-bold">200+ foyers</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carte 3 : Santé -->
+                <div class="action-card bg-white rounded-2xl overflow-hidden shadow-xl shadow-forest/5 border border-forest/5 flex flex-col justify-between" data-category="sante">
+                    <div>
+                        <div class="relative h-56 bg-forest/5 overflow-hidden">
+                            <img src="d9b75a92da659368e8fe0297934ff742.jpg" class="w-full h-full object-cover" alt="Soutien médical NS DAS">
+                            <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-emeraldVibrant uppercase shadow-sm">Santé & Maladies</span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <h3 class="font-serif text-xl font-bold text-forest">Prise en charge d'opérations chirurgicales et soins critiques</h3>
+                            <p class="text-xs text-forest/60">Par Nasser Sari (NS DAS) • Urgence humanitaire</p>
+                            
+                            <div class="space-y-1.5 pt-2">
+                                <div class="flex justify-between text-xs font-bold">
+                                    <span>Objectif en cours</span>
+                                    <span class="text-emeraldVibrant">100 % pris en charge</span>
+                                </div>
+                                <div class="w-full bg-cream h-2 rounded-full overflow-hidden">
+                                    <div class="bg-emeraldVibrant h-full rounded-full" style="width: 100%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2 flex items-center justify-between border-t border-forest/5 text-sm">
+                        <div>
+                            <span class="text-xs text-forest/60 block">Engagement</span>
+                            <strong class="text-forest font-bold">Soins vitaux</strong>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-xs text-forest/60 block">Bénéficiaires</span>
+                            <strong class="text-emeraldVibrant font-bold">Patients prioritaires</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carte 4 : Quotidien -->
+                <div class="action-card bg-white rounded-2xl overflow-hidden shadow-xl shadow-forest/5 border border-forest/5 flex flex-col justify-between" data-category="quotidien">
+                    <div>
+                        <div class="relative h-56 bg-forest/5 overflow-hidden">
+                            <img src="70054a854594911ec5c96117f8b59522.jpg" class="w-full h-full object-cover" alt="Nasser Sari en action">
+                            <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-emeraldVibrant uppercase shadow-sm">Mon Quotidien</span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <h3 class="font-serif text-xl font-bold text-forest">Déplacements, écoute active et rencontres sur le terrain</h3>
+                            <p class="text-xs text-forest/60">Par Nasser Sari • NS DAS</p>
+                            
+                            <div class="space-y-1.5 pt-2">
+                                <div class="flex justify-between text-xs font-bold">
+                                    <span>Tournées régionales</span>
+                                    <span class="text-emeraldVibrant">Actif</span>
+                                </div>
+                                <div class="w-full bg-cream h-2 rounded-full overflow-hidden">
+                                    <div class="bg-emeraldVibrant h-full rounded-full" style="width: 100%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2 flex items-center justify-between border-t border-forest/5 text-sm">
+                        <div>
+                            <span class="text-xs text-forest/60 block">Impact direct</span>
+                            <strong class="text-forest font-bold">Proximité</strong>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-xs text-forest/60 block">Présence</span>
+                            <strong class="text-emeraldVibrant font-bold">Internationale</strong>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Compteur global -->
+            <div class="mt-16 text-center space-y-6">
+                <p class="text-lg font-medium text-forest">Plus de <strong class="text-emeraldVibrant text-xl">50 véhicules offerts</strong> et <strong class="text-emeraldVibrant text-xl">200 familles aidées</strong> à travers le monde.</p>
+                <div>
+                    <a href="https://wa.me/message/O5SJJEPXTLQGJ1" target="_blank" class="inline-flex items-center justify-center px-8 py-3.5 rounded-full border-2 border-forest text-forest font-bold hover:bg-forest hover:text-white transition-all">
+                        Voir toutes mes preuves et exploits →
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- NOUVELLE SECTION : GALERIE COMPLÈTE DE PREUVES & MOMENTS VRAIS (Intègre les autres photos restantes pour totaliser les 21 photos) -->
+    <section class="py-20 bg-forest text-white overflow-hidden" id="galerie-preuves">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="text-center max-w-2xl mx-auto space-y-3">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-emeraldVibrant text-xs font-bold uppercase tracking-wider">
+                    GALERIE OFFICIELLE
+                </div>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold">
+                    Galerie Complète de <span class="italic text-emeraldVibrant">Preuves & Moments Vrais</span>
+                </h2>
+                <p class="text-white/70 text-sm">Défilement automatique de toutes nos archives sur le terrain pour attester de l'authenticité de chaque action.</p>
+            </div>
+
+            <!-- Carrousel Automatique Secondaireu (Défilement 2 secondes + Swipe + Pause au survol/toucher) -->
+            <div class="relative">
+                <div id="galleryCarousel" class="flex gap-6 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory py-4" onmouseenter="pauseAutoScroll('gallery')" onmouseleave="resumeAutoScroll('gallery')" ontouchstart="pauseAutoScroll('gallery')" ontouchend="resumeAutoScroll('gallery')">
+                    
+                    <!-- Photos additionnelles pour garantir la présence des 21 photos au total -->
+                    <div class="w-80 sm:w-96 flex-shrink-0 snap-center relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20 bg-forest h-80">
+                        <img src="97c16991f1928dcd0e8f49f4e7eb977c.jpg" class="w-full h-full object-cover" alt="Preuve terrain 1">
+                        <div class="absolute inset-0 bg-gradient-to-t from-forest/90 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-center">
+                            <span class="bg-emeraldVibrant text-white px-3 py-1 rounded-full text-xs font-bold">Assistance & Mobilité</span>
+                        </div>
+                    </div>
+                    
+                    <div class="w-80 sm:w-96 flex-shrink-0 snap-center relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20 bg-forest h-80">
+                        <img src="e428f1c9a5ebedebf36d050e2e82f3bf.jpg" class="w-full h-full object-cover" alt="Preuve terrain 2">
+                        <div class="absolute inset-0 bg-gradient-to-t from-forest/90 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-center">
+                            <span class="bg-emeraldVibrant text-white px-3 py-1 rounded-full text-xs font-bold">Suivi Médical</span>
+                        </div>
+                    </div>
+
+                    <div class="w-80 sm:w-96 flex-shrink-0 snap-center relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20 bg-forest h-80">
+                        <img src="22c080c7b5417b0679ef48c04532737b.jpg" class="w-full h-full object-cover" alt="Preuve terrain 3">
+                        <div class="absolute inset-0 bg-gradient-to-t from-forest/90 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-center">
+                            <span class="bg-emeraldVibrant text-white px-3 py-1 rounded-full text-xs font-bold">Signature officielle</span>
+                        </div>
+                    </div>
+
+                    <div class="w-80 sm:w-96 flex-shrink-0 snap-center relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20 bg-forest h-80">
+                        <img src="70054a854594911ec5c96117f8b59522.jpg" class="w-full h-full object-cover" alt="Preuve terrain 4">
+                        <div class="absolute inset-0 bg-gradient-to-t from-forest/90 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-center">
+                            <span class="bg-emeraldVibrant text-white px-3 py-1 rounded-full text-xs font-bold">Bureau & Organisation</span>
+                        </div>
+                    </div>
+
+                    <div class="w-80 sm:w-96 flex-shrink-0 snap-center relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20 bg-forest h-80">
+                        <img src="45446e6c434766723615f56c3c153940.jpg" class="w-full h-full object-cover" alt="Preuve terrain 5">
+                        <div class="absolute inset-0 bg-gradient-to-t from-forest/90 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-center">
+                            <span class="bg-emeraldVibrant text-white px-3 py-1 rounded-full text-xs font-bold">Remise de clés en concession</span>
+                        </div>
+                    </div>
+
+                    <div class="w-80 sm:w-96 flex-shrink-0 snap-center relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20 bg-forest h-80">
+                        <img src="f0cc119a8d843f816bb0f84e2c9f5929.jpg" class="w-full h-full object-cover" alt="Preuve terrain 6">
+                        <div class="absolute inset-0 bg-gradient-to-t from-forest/90 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-center">
+                            <span class="bg-emeraldVibrant text-white px-3 py-1 rounded-full text-xs font-bold">Sourire d'un bénéficiaire</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Boutons de contrôle galerie < > -->
+                <div class="flex justify-center gap-4 mt-6">
+                    <button onclick="scrollCarousel('gallery', 'left')" class="w-12 h-12 rounded-full bg-white text-forest flex items-center justify-center shadow-lg font-bold text-lg hover:bg-emeraldVibrant hover:text-white transition-colors">‹</button>
+                    <button onclick="scrollCarousel('gallery', 'right')" class="w-12 h-12 rounded-full bg-white text-forest flex items-center justify-center shadow-lg font-bold text-lg hover:bg-emeraldVibrant hover:text-white transition-colors">›</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- E. SECTION "COMMENT RECEVOIR VOTRE DON ?" (FOND VERT FORÊT #0B3B24) -->
+    <section class="py-20 bg-forest text-white relative overflow-hidden" id="fonctionnement">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-6 space-y-8">
+                    <div class="space-y-4">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-emeraldVibrant text-xs font-bold uppercase tracking-wider">
+                            COMMENT ÇA MARCHE
+                        </div>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold">
+                            Faites votre demande simplement et entrez en contact en <span class="italic text-emeraldVibrant">moins de 5 minutes.</span>
+                        </h2>
+                        <p class="text-white/80 text-base leading-relaxed">
+                            Aucune paperasse complexe. Pas d'intermédiaire. Juste votre histoire, votre besoin réel et un échange direct avec Nasser Sari.
+                        </p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4 bg-white/5 border border-white/10 p-4 rounded-2xl">
+                            <span class="w-8 h-8 rounded-xl bg-emeraldVibrant text-white font-bold flex items-center justify-center flex-shrink-0 text-sm">1</span>
+                            <div>
+                                <h4 class="font-bold text-base">Préparez votre demande</h4>
+                                <p class="text-xs text-white/70 mt-1">Expliquez brièvement votre situation (besoin d'un véhicule, aide financière ou urgence médicale).</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 bg-white/5 border border-white/10 p-4 rounded-2xl">
+                            <span class="w-8 h-8 rounded-xl bg-emeraldVibrant text-white font-bold flex items-center justify-center flex-shrink-0 text-sm">2</span>
+                            <div>
+                                <h4 class="font-bold text-base">Cliquez sur le lien WhatsApp</h4>
+                                <p class="text-xs text-white/70 mt-1">Utilisez les boutons de ce site pour ouvrir directement la discussion sécurisée WhatsApp Business.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 bg-white/5 border border-white/10 p-4 rounded-2xl">
+                            <span class="w-8 h-8 rounded-xl bg-emeraldVibrant text-white font-bold flex items-center justify-center flex-shrink-0 text-sm">3</span>
+                            <div>
+                                <h4 class="font-bold text-base">Envoyez votre message</h4>
+                                <p class="text-xs text-white/70 mt-1">Présentez-vous avec sincérité et transparence pour faciliter l'étude de votre dossier par NS DAS.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 bg-white/5 border border-white/10 p-4 rounded-2xl">
+                            <span class="w-8 h-8 rounded-xl bg-emeraldVibrant text-white font-bold flex items-center justify-center flex-shrink-0 text-sm">4</span>
+                            <div>
+                                <h4 class="font-bold text-base">Recevez votre aide</h4>
+                                <p class="text-xs text-white/70 mt-1">Après étude de votre situation, nous organisons la remise du don ou le virement direct.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visuel d'aperçu avec Photo 1 (Portrait officiel de Nasser Sari) -->
+                <div class="lg:col-span-6 flex justify-center">
+                    <div class="w-full max-w-sm bg-cream text-forest rounded-3xl p-6 shadow-2xl border-4 border-white/20 space-y-6">
+                        
+                        <div class="flex items-center justify-between border-b border-forest/10 pb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-14 h-14 rounded-full overflow-hidden border-2 border-emeraldVibrant shadow-md flex-shrink-0">
+                                    <img src="8efbae8d0912f308a864273f333f690e.jpg" class="w-full h-full object-cover" alt="Nasser Sari Portrait Officiel">
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-sm">Nasser Sari</h5>
+                                    <span class="text-xs text-emeraldVibrant font-semibold flex items-center gap-1">● NS DAS - En ligne</span>
+                                </div>
+                            </div>
+                            <span class="text-xs font-bold bg-emeraldVibrant/10 text-emeraldVibrant px-2.5 py-1 rounded-full">Sécurisé</span>
+                        </div>
+
+                        <div class="space-y-3">
+                            <div class="bg-white p-3.5 rounded-2xl shadow-sm text-xs space-y-1">
+                                <span class="font-bold text-emeraldVibrant block">Catégories de dons disponibles :</span>
+                                <p class="text-forest/80">🚗 Véhicules & Voitures neufs</p>
+                                <p class="text-forest/80">💰 Aides financières directes</p>
+                                <p class="text-forest/80">🏥 Soutien & Soins médicaux</p>
+                            </div>
+
+                            <div class="bg-forest text-cream p-3.5 rounded-2xl text-xs space-y-1">
+                                <p class="font-semibold">💬 Contact direct WhatsApp :</p>
+                                <p class="text-white/80 italic">"Discutez directement avec Nasser Sari pour soumettre votre dossier."</p>
+                            </div>
+                        </div>
+
+                        <a href="https://wa.me/message/O5SJJEPXTLQGJ1" target="_blank" class="block w-full text-center bg-emeraldVibrant text-white py-3.5 rounded-xl font-bold text-sm shadow-lg shadow-emeraldVibrant/30 hover:bg-emeraldHover transition-all">
+                            Démarrer la discussion WhatsApp
+                        </a>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- F. SECTION FINALE D'APPEL À L'ACTION (FOND CRÈME #F8F7F2) -->
+    <section class="py-20 bg-cream text-center">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <h2 class="font-serif text-3xl sm:text-5xl font-bold text-forest">
+                Prêt à changer votre quotidien ? <span class="italic text-emeraldVibrant">Contactez-moi maintenant.</span>
+            </h2>
+            <p class="text-lg text-forest/80 max-w-2xl mx-auto">
+                Cliquez sur le bouton ci-dessous pour m'écrire directement sur WhatsApp Business. Un échange privilégié vous attend.
+            </p>
+            <div>
+                <a href="https://wa.me/message/O5SJJEPXTLQGJ1" target="_blank" class="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-emeraldVibrant text-white font-bold text-lg shadow-xl shadow-emeraldVibrant/30 hover:bg-emeraldHover transition-all transform hover:-translate-y-1">
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                    Ouvrir WhatsApp maintenant
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- G. BOUTON FLOTTANT WHATSAPP (FIXE EN BAS À DROITE AVEC PULSATION DOUCE) -->
+    <a href="https://wa.me/message/O5SJJEPXTLQGJ1" target="_blank" class="fixed bottom-6 right-6 z-50 w-16 h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform focus:outline-none animate-bounce" aria-label="Discuter sur WhatsApp">
+        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+    </a>
+
+    <!-- H. PIED DE PAGE (FOOTER) ÉLÉGANT AVEC GROS BOUTON WHATSAPP BIEN VISIBLE -->
+    <footer class="bg-forest text-white py-16 border-t border-white/10">
+        <div class="max-w-4xl mx-auto px-4 text-center space-y-8">
+            <div class="space-y-3">
+                <h3 class="font-serif text-2xl font-bold">Nasser Sari — NS DAS</h3>
+                <p class="text-white/70 text-sm max-w-lg mx-auto">Dons directs, transparents et 100 % gratuits. Chaque action est pensée pour changer des vies durablement.</p>
+            </div>
+            
+            <div class="pt-4">
+                <a href="https://wa.me/message/O5SJJEPXTLQGJ1" target="_blank" class="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-emeraldVibrant text-white font-bold text-lg shadow-2xl shadow-emeraldVibrant/50 hover:bg-emeraldHover transition-all transform hover:-translate-y-1 border-2 border-white/30">
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                    Contactez-nous sur WhatsApp maintenant
+                </a>
+            </div>
+
+            <div class="pt-8 border-t border-white/10 text-xs text-white/50 space-y-1">
+                <p>© 2026 NS DAS Fondation. Tous droits réservés.</p>
+                <p>Ce site officiel ne demande jamais d'argent ni de frais de participation.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT : CARROUSEL AUTOMATIQUE (2 SECONDES) + SWIPE + PAUSE AU SURVOL -->
+    <script>
+        // Gestion du menu burger
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            if (menu.classList.contains('translate-x-full')) {
+                menu.classList.remove('translate-x-full');
+                menu.classList.add('translate-x-0');
+            } else {
+                menu.classList.remove('translate-x-0');
+                menu.classList.add('translate-x-full');
+            }
+        }
+
+        // Système de défilement des carrousels (Automatique toutes les 2s + Manuel)
+        const autoScrollTimers = {};
+
+        function startAutoScroll(carouselId) {
+            const container = document.getElementById(carouselId);
+            if (!container) return;
+
+            autoScrollTimers[carouselId] = setInterval(() => {
+                const cardWidth = container.querySelector('div').offsetWidth + 16; // largeur + gap
+                if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 10) {
+                    container.scrollTo({ left: 0, behavior: 'smooth' });
+                } else {
+                    container.scrollBy({ left: cardWidth, behavior: 'smooth' });
+                }
+            }, 2000); // 2000ms = 2 secondes
+        }
+
+        function pauseAutoScroll(carouselId) {
+            clearInterval(autoScrollTimers[carouselId]);
+        }
+
+        function resumeAutoScroll(carouselId) {
+            startAutoScroll(carouselId);
+        }
+
+        function scrollCarousel(carouselId, direction) {
+            const container = document.getElementById(carouselId);
+            if (!container) return;
+            const cardWidth = container.querySelector('div').offsetWidth + 16;
+            if (direction === 'left') {
+                container.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+            } else {
+                container.scrollBy({ left: cardWidth, behavior: 'smooth' });
+            }
+        }
+
+        // Lancement des carrousels automatiques au chargement de la page
+        window.addEventListener('DOMContentLoaded', () => {
+            startAutoScroll('hero');
+            startAutoScroll('gallery');
+        });
+
+        // Filtrage des actions
+        function filtrerActions(categorie, boutonSelectionne) {
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('bg-emeraldVibrant', 'text-white', 'shadow-md');
+                btn.classList.add('bg-white', 'text-forest', 'border', 'border-forest/10');
+            });
+            boutonSelectionne.classList.remove('bg-white', 'text-forest', 'border', 'border-forest/10');
+            boutonSelectionne.classList.add('bg-emeraldVibrant', 'text-white', 'shadow-md');
+
+            document.querySelectorAll('.action-card').forEach(card => {
+                if (categorie === 'tous' || card.getAttribute('data-category') === categorie) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
